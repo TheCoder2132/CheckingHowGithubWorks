@@ -1,5 +1,6 @@
 const express = require('express');
 const hbs = require('hbs');
+const port = process.env.PORT||3000;
 
 var app = express();
 
@@ -27,4 +28,6 @@ app.get('/about',(req,res) => {
   }); //end render
 });
 
-app.listen(3000);
+app.listen(port,() => {
+  console.log(`Listening successfully on port ${port}`)
+});
